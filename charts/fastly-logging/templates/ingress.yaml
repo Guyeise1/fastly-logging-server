@@ -1,0 +1,18 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fastly-logger
+spec:
+  rules:
+    - host: {{.Values.ingress.host}}
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: fastly-logger
+                port:
+                  number: 80
+{{- end}}
