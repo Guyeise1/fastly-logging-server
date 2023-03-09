@@ -1,9 +1,0 @@
-image: guyeise5/fastly-logging
-ingress:
-  enabled: false
-  host: fastly-logging.test
-
-ngrok:
-  enabled: false
-  region: us
-  image: ngrok/ngrok:alpine
